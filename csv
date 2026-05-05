@@ -1,0 +1,14 @@
+import csv
+from SearchTrees import BSTMap, AVLTreeMap
+
+bst_tree = BSTMap()
+avl_tree = AVLTreeMap()
+
+csv_file = "courses_2023.csv"
+
+with open(csv_file, newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        key = row['CourseID']  # change if your key column is different
+        bst_tree.insert(key, row)
+        avl_tree.insert(key, row)
