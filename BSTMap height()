@@ -1,0 +1,8 @@
+class BSTMap:
+    # ... other methods ...
+    def height(self):
+        def _height(node):
+            if node is None:
+                return -1
+            return 1 + max(_height(node.left), _height(node.right))
+        return _height(self._root)
