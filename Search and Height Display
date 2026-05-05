@@ -1,0 +1,35 @@
+def display_menu():
+    print("\n=== Course Schedule Trees Menu ===")
+    print("1. Search for a course by ID")
+    print("2. Display BST height")
+    print("3. Display AVL height")
+    print("4. Display all courses (BST in-order)")
+    print("5. Display all courses (AVL in-order)")
+    print("6. Exit")
+
+def search_course():
+    course_id = input("Enter Course ID to search: ")
+    bst_result = bst_tree.search(course_id)
+    avl_result = avl_tree.search(course_id)
+    
+    if bst_result:
+        for k, v in bst_result.items():
+            print(k, ":", v)
+    else:
+        print("Course not found in BST.")
+    
+    if avl_result:
+        for k, v in avl_result.items():
+            print(k, ":", v)
+    else:
+        print("Course not found in AVL.")
+
+def display_bst_height():
+    print("BST Height:", bst_tree.height())
+
+def display_avl_height():
+    print("AVL Height:", avl_tree.height())
+
+def display_all_courses(tree):
+    for key, value in tree.inorder_items():
+        print(key, value)
