@@ -1,0 +1,18 @@
+while True:
+    display_menu()
+    choice = input("Choose an option: ").strip()
+    
+    if choice == "1":
+        search_course()
+    elif choice == "2":
+        display_bst_height()
+    elif choice == "3":
+        display_avl_height()
+    elif choice == "4":
+        display_all_courses(bst_tree)
+    elif choice == "5":
+        display_all_courses(avl_tree)
+    elif choice == "6":
+        break
+    else:
+        print("Invalid choice. Please try again.")
